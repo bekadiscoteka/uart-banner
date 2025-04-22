@@ -1,0 +1,197 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sseg5[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg5[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg5[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg5[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg5[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg5[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg5[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg4[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg4[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg4[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "sseg0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "baund_rate_ready",
+					"strict" : false
+				},
+				{
+					"name" : "banner_write",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "rx",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
