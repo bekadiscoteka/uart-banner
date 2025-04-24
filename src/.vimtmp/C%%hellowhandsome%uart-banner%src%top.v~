@@ -1,8 +1,9 @@
-`include "uart.v"
+`include "uart/uart.v"
 `include "bcd2sseg_active_low.v"
 `include "signal_decoder.v"
 `include "serial2parallel.v"
 `include "bcd_shift_register.v"
+`include "clk_div_26bit.v"
 module top(
 	output [7:0]	sseg5,
 					sseg4,
@@ -12,6 +13,7 @@ module top(
 					sseg0,
 	output	baund_rate_ready, //indicates baund is detected 
 			banner_write, //indicates banner is being written
+			divided_clk_tick,
 			tx,
 	input clk, reset, rx
 );				
@@ -25,6 +27,13 @@ module top(
 
 	wire [7:0] ascii;
 	wire [(4*6)-1:0] parallel_data, bcd_set;
+
+	clk_div_26bit #(.DIVIDER(49_999)) 
+	divider(
+		.clk(clk),
+		.reset(reset),
+		.clk_out(divided_clk_tick)
+	);
 
 	uart uart_inst(
 		.clk(clk),
@@ -69,7 +78,8 @@ module top(
 		.write(s2p_done_tick),
 		.pause(pause),
 		.data_in(parallel_data),
-		.data_out(bcd_set)
+		.data_out(bcd_set),
+		.divided_clk_tick(divided_clk_tick)
 	);
 
 	bcd2sseg_active_low b2ssg(

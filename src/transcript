@@ -1,0 +1,185 @@
+# do work.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:57:43 on Apr 24,2025
+# vlog -reportprogress 300 -work work tb.v 
+# -- Compiling module clk_div_26bit
+# -- Compiling module bcd_shift_register
+# -- Compiling module division
+# -- Compiling module uart_rx
+# -- Compiling module uart_tx
+# -- Compiling module rx_specific_counter
+# -- Compiling module fifo
+# -- Compiling module uart
+# -- Compiling module bcd2sseg_active_low
+# -- Compiling module signal_decoder
+# -- Compiling module serial2parallel
+# -- Compiling module top
+# -- Compiling module clk_generate
+# -- Compiling module stimulus
+# 
+# Top level modules:
+# 	stimulus
+# End time: 23:57:44 on Apr 24,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim work.stimulus 
+# Start time: 23:57:44 on Apr 24,2025
+# Loading work.stimulus
+# Loading work.uart
+# Loading work.rx_specific_counter
+# Loading work.fifo
+# Loading work.uart_rx
+# Loading work.division
+# Loading work.uart_tx
+# Loading work.top
+# Loading work.clk_div_26bit
+# Loading work.signal_decoder
+# Loading work.serial2parallel
+# Loading work.bcd_shift_register
+# Loading work.bcd2sseg_active_low
+# Loading work.clk_generate
+# ** Warning: (vsim-3017) tb.v(24): [TFMPC] - Too few port connections. Expected 14, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /stimulus/uart_inst File: uart/uart.v
+# ** Warning: (vsim-3722) tb.v(24): [TFMPC] - Missing connection for port 'data_out'.
+# ** Warning: (vsim-3722) tb.v(24): [TFMPC] - Missing connection for port 'tx_full'.
+# ** Warning: (vsim-3722) tb.v(24): [TFMPC] - Missing connection for port 'tx_empty'.
+# ** Warning: (vsim-3722) tb.v(24): [TFMPC] - Missing connection for port 'rx_full'.
+# ** Warning: (vsim-3722) tb.v(24): [TFMPC] - Missing connection for port 'rx_empty'.
+# ** Warning: (vsim-3722) tb.v(24): [TFMPC] - Missing connection for port 'rx_done_tick'.
+# ** Warning: (vsim-3722) tb.v(24): [TFMPC] - Missing connection for port 'ready'.
+# ** Warning: (vsim-3722) tb.v(24): [TFMPC] - Missing connection for port 'rd_data'.
+# ** Warning: (vsim-3722) tb.v(24): [TFMPC] - Missing connection for port 'rx'.
+# ** Warning: (vsim-3017) uart/uart.v(35): [TFMPC] - Too few port connections. Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /stimulus/uart_inst/counter File: uart/m_counter.v
+# ** Warning: (vsim-3722) uart/uart.v(35): [TFMPC] - Missing connection for port 'counter'.
+# ** Warning: (vsim-3017) uart/uart_rx.v(34): [TFMPC] - Too few port connections. Expected 9, found 7.
+#    Time: 0 ns  Iteration: 0  Instance: /stimulus/uart_inst/rx_inst/divide File: uart/division.v
+# ** Warning: (vsim-3722) uart/uart_rx.v(34): [TFMPC] - Missing connection for port 'rmd'.
+# ** Warning: (vsim-3722) uart/uart_rx.v(34): [TFMPC] - Missing connection for port 'ready'.
+# ** Warning: (vsim-3017) tb.v(32): [TFMPC] - Too few port connections. Expected 13, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /stimulus/top File: top.v
+# ** Warning: (vsim-3722) tb.v(32): [TFMPC] - Missing connection for port 'sseg5'.
+# ** Warning: (vsim-3722) tb.v(32): [TFMPC] - Missing connection for port 'sseg4'.
+# ** Warning: (vsim-3722) tb.v(32): [TFMPC] - Missing connection for port 'sseg3'.
+# ** Warning: (vsim-3722) tb.v(32): [TFMPC] - Missing connection for port 'sseg2'.
+# ** Warning: (vsim-3722) tb.v(32): [TFMPC] - Missing connection for port 'sseg1'.
+# ** Warning: (vsim-3722) tb.v(32): [TFMPC] - Missing connection for port 'sseg0'.
+# ** Warning: (vsim-3722) tb.v(32): [TFMPC] - Missing connection for port 'divided_clk_tick'.
+# ** Warning: (vsim-3722) tb.v(32): [TFMPC] - Missing connection for port 'tx'.
+# ** Warning: (vsim-3017) top.v(38): [TFMPC] - Too few port connections. Expected 14, found 9.
+#    Time: 0 ns  Iteration: 0  Instance: /stimulus/top/uart_inst File: uart/uart.v
+# ** Warning: (vsim-3722) top.v(38): [TFMPC] - Missing connection for port 'tx_full'.
+# ** Warning: (vsim-3722) top.v(38): [TFMPC] - Missing connection for port 'tx_empty'.
+# ** Warning: (vsim-3722) top.v(38): [TFMPC] - Missing connection for port 'rx_full'.
+# ** Warning: (vsim-3722) top.v(38): [TFMPC] - Missing connection for port 'rx_done_tick'.
+# ** Warning: (vsim-3722) top.v(38): [TFMPC] - Missing connection for port 'wr_data'.
+# ** Warning: (vsim-3017) uart/uart.v(35): [TFMPC] - Too few port connections. Expected 6, found 5.
+#    Time: 0 ns  Iteration: 0  Instance: /stimulus/top/uart_inst/counter File: uart/m_counter.v
+# ** Warning: (vsim-3722) uart/uart.v(35): [TFMPC] - Missing connection for port 'counter'.
+# ** Warning: (vsim-3017) uart/uart_rx.v(34): [TFMPC] - Too few port connections. Expected 9, found 7.
+#    Time: 0 ns  Iteration: 0  Instance: /stimulus/top/uart_inst/rx_inst/divide File: uart/division.v
+# ** Warning: (vsim-3722) uart/uart_rx.v(34): [TFMPC] - Missing connection for port 'rmd'.
+# ** Warning: (vsim-3722) uart/uart_rx.v(34): [TFMPC] - Missing connection for port 'ready'.
+# ** Warning: (vsim-3015) top.v(61): [PCDPC] - Port size (4) does not match connection size (32) for port 'data_in'. The port definition is at: serial2parallel.v(10).
+#    Time: 0 ns  Iteration: 0  Instance: /stimulus/top/s2p File: serial2parallel.v
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+# cycle per byte:       5215
+#    0
+#    0
+#    0
+#    1
+#    2
+#    3
+#    4
+#    5
+#    6
+#    7
+#    8
+#    9
+#   10
+#   11
+#   12
+#   13
+#   14
+#   15
+#   16
+#   17
+#   18
+#   19
+#   20
+#   21
+#   22
+#   23
+#   24
+#   25
+#   26
+#   27
+#   28
+#   29
+#   30
+#   31
+#   32
+#   33
+#        325
+# time:             18000000
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  0  0  0  0  0  0 
+#  3  4  0  3  4  0 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+#  4  0  3  4  0  3 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+#  4  0  3  4  0  3 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+#  4  0  3  4  0  3 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+#  4  0  3  4  0  3 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+#  4  0  3  4  0  3 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+#  4  0  3  4  0  3 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+#  4  0  3  4  0  3 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+#  4  0  3  4  0  3 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+#  4  0  3  4  0  3 
+#  3  4  0  3  4  0 
+#  0  3  4  0  3  4 
+# ** Note: $finish    : tb.v(106)
+#    Time: 56000990 ns  Iteration: 0  Instance: /stimulus
+# 1
+# Break in Module stimulus at tb.v line 106
+# End time: 00:33:02 on Apr 25,2025, Elapsed time: 0:35:18
+# Errors: 0, Warnings: 36

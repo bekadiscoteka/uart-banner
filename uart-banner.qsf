@@ -116,8 +116,8 @@ set_location_assignment PIN_J20 -to sseg5[0]
 set_location_assignment PIN_K20 -to sseg5[1]
 set_location_assignment PIN_L18 -to sseg5[2]
 set_location_assignment PIN_N18 -to sseg5[3]
-set_location_assignment PIN_P18 -to sseg5[4]
-set_location_assignment PIN_P19 -to sseg5[5]
+set_location_assignment PIN_M20 -to sseg5[4]
+set_location_assignment PIN_N19 -to sseg5[5]
 set_location_assignment PIN_N20 -to sseg5[6]
 set_location_assignment PIN_L19 -to sseg5[7]
 
@@ -138,4 +138,8 @@ set_global_assignment -name VERILOG_FILE src/bcd_shift_register.v
 
 set_location_assignment PIN_B14 -to reset
 set_location_assignment PIN_P11 -to clk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to tx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to rx
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+set_location_assignment PIN_D14 -to clk_divided_tick
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

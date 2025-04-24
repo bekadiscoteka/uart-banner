@@ -180,6 +180,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "divided_clk_tick",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for uart-banner
-Tue Apr 22 21:29:21 2025
+Fri Apr 25 00:33:51 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -24,23 +24,24 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  16. General Register Statistics
  17. Inverted Register Statistics
  18. Multiplexer Restructuring Statistics (Restructuring Performed)
- 19. Parameter Settings for User Entity Instance: uart:uart_inst
- 20. Parameter Settings for User Entity Instance: uart:uart_inst|rx_specific_counter:counter
- 21. Parameter Settings for User Entity Instance: uart:uart_inst|fifo:tx_fifo
- 22. Parameter Settings for User Entity Instance: uart:uart_inst|fifo:rx_fifo
- 23. Parameter Settings for User Entity Instance: uart:uart_inst|uart_rx:rx_inst
- 24. Parameter Settings for User Entity Instance: uart:uart_inst|uart_rx:rx_inst|division:divide
- 25. Parameter Settings for User Entity Instance: uart:uart_inst|uart_tx:tx_inst
- 26. Parameter Settings for User Entity Instance: serial2parallel:s2p
- 27. Parameter Settings for User Entity Instance: bcd_shift_register:sr
- 28. Port Connectivity Checks: "serial2parallel:s2p"
- 29. Port Connectivity Checks: "uart:uart_inst|uart_rx:rx_inst|division:divide"
- 30. Port Connectivity Checks: "uart:uart_inst|rx_specific_counter:counter"
- 31. Port Connectivity Checks: "uart:uart_inst"
- 32. Post-Synthesis Netlist Statistics for Top Partition
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
- 35. Analysis & Synthesis Suppressed Messages
+ 19. Parameter Settings for User Entity Instance: clk_div_26bit:divider
+ 20. Parameter Settings for User Entity Instance: uart:uart_inst
+ 21. Parameter Settings for User Entity Instance: uart:uart_inst|rx_specific_counter:counter
+ 22. Parameter Settings for User Entity Instance: uart:uart_inst|fifo:tx_fifo
+ 23. Parameter Settings for User Entity Instance: uart:uart_inst|fifo:rx_fifo
+ 24. Parameter Settings for User Entity Instance: uart:uart_inst|uart_rx:rx_inst
+ 25. Parameter Settings for User Entity Instance: uart:uart_inst|uart_rx:rx_inst|division:divide
+ 26. Parameter Settings for User Entity Instance: uart:uart_inst|uart_tx:tx_inst
+ 27. Parameter Settings for User Entity Instance: serial2parallel:s2p
+ 28. Parameter Settings for User Entity Instance: bcd_shift_register:sr
+ 29. Port Connectivity Checks: "serial2parallel:s2p"
+ 30. Port Connectivity Checks: "uart:uart_inst|uart_rx:rx_inst|division:divide"
+ 31. Port Connectivity Checks: "uart:uart_inst|rx_specific_counter:counter"
+ 32. Port Connectivity Checks: "uart:uart_inst"
+ 33. Post-Synthesis Netlist Statistics for Top Partition
+ 34. Elapsed Time Per Partition
+ 35. Analysis & Synthesis Messages
+ 36. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -67,16 +68,16 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr 22 21:29:21 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 25 00:33:51 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; uart-banner                                     ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 605                                             ;
-;     Total combinational functions  ; 490                                             ;
-;     Dedicated logic registers      ; 391                                             ;
-; Total registers                    ; 391                                             ;
-; Total pins                         ; 54                                              ;
+; Total logic elements               ; 650                                             ;
+;     Total combinational functions  ; 535                                             ;
+;     Dedicated logic registers      ; 419                                             ;
+; Total registers                    ; 419                                             ;
+; Total pins                         ; 55                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -198,6 +199,7 @@ on the Quartus Prime software download page.
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
 ; src/top.v                        ; yes             ; User Verilog HDL File        ; C:/hellowhandsome/uart-banner/src/top.v                 ;         ;
 ; src/signal_decoder.v             ; yes             ; User Verilog HDL File        ; C:/hellowhandsome/uart-banner/src/signal_decoder.v      ;         ;
+; src/serial2parallel.v            ; yes             ; User Verilog HDL File        ; C:/hellowhandsome/uart-banner/src/serial2parallel.v     ;         ;
 ; src/bcd2sseg_active_low.v        ; yes             ; User Verilog HDL File        ; C:/hellowhandsome/uart-banner/src/bcd2sseg_active_low.v ;         ;
 ; src/bcd_shift_register.v         ; yes             ; User Verilog HDL File        ; C:/hellowhandsome/uart-banner/src/bcd_shift_register.v  ;         ;
 ; src/uart/division.v              ; yes             ; Auto-Found Verilog HDL File  ; C:/hellowhandsome/uart-banner/src/uart/division.v       ;         ;
@@ -206,7 +208,7 @@ on the Quartus Prime software download page.
 ; src/uart/m_counter.v             ; yes             ; Auto-Found Verilog HDL File  ; C:/hellowhandsome/uart-banner/src/uart/m_counter.v      ;         ;
 ; src/uart/fifo.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/hellowhandsome/uart-banner/src/uart/fifo.v           ;         ;
 ; src/uart/uart.v                  ; yes             ; Auto-Found Verilog HDL File  ; C:/hellowhandsome/uart-banner/src/uart/uart.v           ;         ;
-; serial2parallel.v                ; yes             ; Auto-Found Verilog HDL File  ; C:/hellowhandsome/uart-banner/serial2parallel.v         ;         ;
+; src/clk_div_26bit.v              ; yes             ; Auto-Found Verilog HDL File  ; C:/hellowhandsome/uart-banner/src/clk_div_26bit.v       ;         ;
 +----------------------------------+-----------------+------------------------------+---------------------------------------------------------+---------+
 
 
@@ -215,30 +217,30 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 605       ;
+; Estimated Total logic elements              ; 650       ;
 ;                                             ;           ;
-; Total combinational functions               ; 490       ;
+; Total combinational functions               ; 535       ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 287       ;
-;     -- 3 input functions                    ; 78        ;
-;     -- <=2 input functions                  ; 125       ;
+;     -- 4 input functions                    ; 293       ;
+;     -- 3 input functions                    ; 83        ;
+;     -- <=2 input functions                  ; 159       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 393       ;
-;     -- arithmetic mode                      ; 97        ;
+;     -- normal mode                          ; 412       ;
+;     -- arithmetic mode                      ; 123       ;
 ;                                             ;           ;
-; Total registers                             ; 391       ;
-;     -- Dedicated logic registers            ; 391       ;
+; Total registers                             ; 419       ;
+;     -- Dedicated logic registers            ; 419       ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
-; I/O pins                                    ; 54        ;
+; I/O pins                                    ; 55        ;
 ;                                             ;           ;
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 391       ;
-; Total fan-out                               ; 3186      ;
-; Average fan-out                             ; 3.22      ;
+; Maximum fan-out                             ; 419       ;
+; Total fan-out                               ; 3396      ;
+; Average fan-out                             ; 3.19      ;
 +---------------------------------------------+-----------+
 
 
@@ -247,15 +249,16 @@ on the Quartus Prime software download page.
 +-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node          ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                 ; Entity Name         ; Library Name ;
 +-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------+---------------------+--------------+
-; |top                                ; 490 (0)             ; 391 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 54   ; 0            ; 0          ; |top                                                ; top                 ; work         ;
+; |top                                ; 535 (0)             ; 419 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 55   ; 0            ; 0          ; |top                                                ; top                 ; work         ;
 ;    |bcd2sseg_active_low:b2ssg|      ; 42 (42)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|bcd2sseg_active_low:b2ssg                      ; bcd2sseg_active_low ; work         ;
-;    |bcd_shift_register:sr|          ; 29 (29)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|bcd_shift_register:sr                          ; bcd_shift_register  ; work         ;
-;    |serial2parallel:s2p|            ; 15 (15)             ; 32 (32)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|serial2parallel:s2p                            ; serial2parallel     ; work         ;
-;    |signal_decoder:dcode|           ; 4 (4)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|signal_decoder:dcode                           ; signal_decoder      ; work         ;
-;    |uart:uart_inst|                 ; 400 (0)             ; 333 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|uart:uart_inst                                 ; uart                ; work         ;
+;    |bcd_shift_register:sr|          ; 30 (30)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|bcd_shift_register:sr                          ; bcd_shift_register  ; work         ;
+;    |clk_div_26bit:divider|          ; 43 (43)             ; 27 (27)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|clk_div_26bit:divider                          ; clk_div_26bit       ; work         ;
+;    |serial2parallel:s2p|            ; 13 (13)             ; 33 (33)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|serial2parallel:s2p                            ; serial2parallel     ; work         ;
+;    |signal_decoder:dcode|           ; 6 (6)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|signal_decoder:dcode                           ; signal_decoder      ; work         ;
+;    |uart:uart_inst|                 ; 401 (0)             ; 333 (0)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|uart:uart_inst                                 ; uart                ; work         ;
 ;       |fifo:rx_fifo|                ; 66 (66)             ; 76 (76)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|uart:uart_inst|fifo:rx_fifo                    ; fifo                ; work         ;
 ;       |rx_specific_counter:counter| ; 36 (36)             ; 49 (49)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|uart:uart_inst|rx_specific_counter:counter     ; rx_specific_counter ; work         ;
-;       |uart_rx:rx_inst|             ; 298 (138)           ; 208 (99)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|uart:uart_inst|uart_rx:rx_inst                 ; uart_rx             ; work         ;
+;       |uart_rx:rx_inst|             ; 299 (139)           ; 208 (99)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|uart:uart_inst|uart_rx:rx_inst                 ; uart_rx             ; work         ;
 ;          |division:divide|          ; 160 (160)           ; 109 (109)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |top|uart:uart_inst|uart_rx:rx_inst|division:divide ; division            ; work         ;
 +-------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -395,12 +398,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 391   ;
-; Number of registers using Synchronous Clear  ; 27    ;
-; Number of registers using Synchronous Load   ; 16    ;
-; Number of registers using Asynchronous Clear ; 327   ;
+; Total registers                              ; 419   ;
+; Number of registers using Synchronous Clear  ; 28    ;
+; Number of registers using Synchronous Load   ; 24    ;
+; Number of registers using Asynchronous Clear ; 355   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 304   ;
+; Number of registers using Clock Enable       ; 305   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -410,39 +413,47 @@ Encoding Type:  One-Hot
 +--------------------------------------------------+---------+
 ; Inverted Register                                ; Fan out ;
 +--------------------------------------------------+---------+
-; bcd_shift_register:sr|shift_direction            ; 25      ;
+; bcd_shift_register:sr|shift_direction            ; 26      ;
+; uart:uart_inst|fifo:rx_fifo|write_en             ; 9       ;
 ; uart:uart_inst|rx_specific_counter:counter|_m[0] ; 1       ;
 ; uart:uart_inst|rx_specific_counter:counter|_m[2] ; 1       ;
 ; uart:uart_inst|rx_specific_counter:counter|_m[6] ; 1       ;
 ; uart:uart_inst|rx_specific_counter:counter|_m[8] ; 1       ;
-; uart:uart_inst|fifo:rx_fifo|write_en             ; 9       ;
 ; Total number of inverted registers = 6           ;         ;
 +--------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |top|uart:uart_inst|fifo:tx_fifo|read_addr[0]                  ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|uart:uart_inst|uart_rx:rx_inst|cycle_per_byte[0]          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |top|uart:uart_inst|fifo:rx_fifo|write_addr[3]                 ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|serial2parallel:s2p|counter[5]                            ;
-; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |top|uart:uart_inst|uart_rx:rx_inst|division:divide|db_dvnd[1] ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top|bcd_shift_register:sr|data_out[1]                         ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top|bcd_shift_register:sr|data_out[23]                        ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |top|bcd_shift_register:sr|data_out[13]                        ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |top|uart:uart_inst|uart_tx:tx_inst|s_reg[1]                   ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |top|uart:uart_inst|uart_tx:tx_inst|n[0]                       ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 5 LEs                ; 25 LEs                 ; Yes        ; |top|uart:uart_inst|uart_rx:rx_inst|s_operate_reg[3]           ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |top|uart:uart_inst|fifo:tx_fifo|Selector6                     ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top|uart:uart_inst|uart_rx:rx_inst|baund_detect_state         ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top|uart:uart_inst|uart_tx:tx_inst|Selector21                 ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top|uart:uart_inst|fifo:rx_fifo|Selector5                     ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |top|uart:uart_inst|uart_tx:tx_inst|Selector20                 ;
-; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |top|uart:uart_inst|uart_rx:rx_inst|operate_state              ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |top|uart:uart_inst|fifo:tx_fifo|read_addr[0]                   ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|uart:uart_inst|uart_rx:rx_inst|cycle_per_byte[6]           ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 0 LEs                ; 8 LEs                  ; Yes        ; |top|uart:uart_inst|fifo:rx_fifo|write_addr[2]                  ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |top|serial2parallel:s2p|counter[2]                             ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 31 LEs               ; 31 LEs                 ; Yes        ; |top|uart:uart_inst|uart_rx:rx_inst|division:divide|db_dvnd[20] ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; Yes        ; |top|bcd_shift_register:sr|data_out[17]                         ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |top|uart:uart_inst|uart_tx:tx_inst|s_reg[2]                    ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 4 LEs                ; 16 LEs                 ; Yes        ; |top|uart:uart_inst|uart_tx:tx_inst|n[2]                        ;
+; 9:1                ; 5 bits    ; 30 LEs        ; 5 LEs                ; 25 LEs                 ; Yes        ; |top|uart:uart_inst|uart_rx:rx_inst|s_operate_reg[1]            ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; No         ; |top|uart:uart_inst|fifo:tx_fifo|Selector5                      ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |top|uart:uart_inst|uart_rx:rx_inst|baund_detect_state          ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top|uart:uart_inst|uart_tx:tx_inst|Selector23                  ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; No         ; |top|uart:uart_inst|fifo:rx_fifo|Selector6                      ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; No         ; |top|uart:uart_inst|uart_tx:tx_inst|Selector22                  ;
+; 9:1                ; 4 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |top|uart:uart_inst|uart_rx:rx_inst|operate_state               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: clk_div_26bit:divider ;
++----------------+---------+-----------------------------------------+
+; Parameter Name ; Value   ; Type                                    ;
++----------------+---------+-----------------------------------------+
+; DIVIDER        ; 4999999 ; Signed Integer                          ;
++----------------+---------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------------------------------------+
@@ -597,25 +608,25 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 54                          ;
-; cycloneiii_ff         ; 391                         ;
-;     CLR               ; 87                          ;
+; boundary_port         ; 55                          ;
+; cycloneiii_ff         ; 419                         ;
+;     CLR               ; 114                         ;
 ;     ENA               ; 64                          ;
-;     ENA CLR           ; 197                         ;
-;     ENA CLR SCLR      ; 27                          ;
-;     ENA CLR SLD       ; 16                          ;
-; cycloneiii_lcell_comb ; 497                         ;
-;     arith             ; 97                          ;
-;         2 data inputs ; 97                          ;
-;     normal            ; 400                         ;
+;     ENA CLR           ; 189                         ;
+;     ENA CLR SCLR      ; 28                          ;
+;     ENA CLR SLD       ; 24                          ;
+; cycloneiii_lcell_comb ; 542                         ;
+;     arith             ; 123                         ;
+;         2 data inputs ; 123                         ;
+;     normal            ; 419                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 22                          ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 78                          ;
-;         4 data inputs ; 287                         ;
+;         1 data inputs ; 23                          ;
+;         2 data inputs ; 19                          ;
+;         3 data inputs ; 83                          ;
+;         4 data inputs ; 293                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.97                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.10                        ;
 +-----------------------+-----------------------------+
 
 
@@ -634,7 +645,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Apr 22 21:28:23 2025
+    Info: Processing started: Fri Apr 25 00:32:48 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uart-banner -c uart-banner
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -644,7 +655,7 @@ Warning (12019): Can't analyze file -- file uart/uart.v is missing
 Warning (12019): Can't analyze file -- file uart/m_counter.v is missing
 Warning (12019): Can't analyze file -- file uart/fifo.v is missing
 Warning (12019): Can't analyze file -- file uart/division.v is missing
-Info (12021): Found 11 design units, including 11 entities, in source file src/top.v
+Info (12021): Found 12 design units, including 12 entities, in source file src/top.v
     Info (12023): Found entity 1: division File: C:/hellowhandsome/uart-banner/src/uart/division.v Line: 7
     Info (12023): Found entity 2: uart_rx File: C:/hellowhandsome/uart-banner/src/uart/uart_rx.v Line: 4
     Info (12023): Found entity 3: uart_tx File: C:/hellowhandsome/uart-banner/src/uart/uart_tx.v Line: 3
@@ -653,15 +664,18 @@ Info (12021): Found 11 design units, including 11 entities, in source file src/t
     Info (12023): Found entity 6: uart File: C:/hellowhandsome/uart-banner/src/uart/uart.v Line: 7
     Info (12023): Found entity 7: bcd2sseg_active_low File: C:/hellowhandsome/uart-banner/src/bcd2sseg_active_low.v Line: 3
     Info (12023): Found entity 8: signal_decoder File: C:/hellowhandsome/uart-banner/src/signal_decoder.v Line: 3
-    Info (12023): Found entity 9: serial2parallel File: C:/hellowhandsome/uart-banner/serial2parallel.v Line: 3
+    Info (12023): Found entity 9: serial2parallel File: C:/hellowhandsome/uart-banner/src/serial2parallel.v Line: 3
     Info (12023): Found entity 10: bcd_shift_register File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 3
-    Info (12023): Found entity 11: top File: C:/hellowhandsome/uart-banner/src/top.v Line: 6
+    Info (12023): Found entity 11: clk_div_26bit File: C:/hellowhandsome/uart-banner/src/clk_div_26bit.v Line: 5
+    Info (12023): Found entity 12: top File: C:/hellowhandsome/uart-banner/src/top.v Line: 7
 Info (12021): Found 0 design units, including 0 entities, in source file src/signal_decoder.v
 Info (12021): Found 0 design units, including 0 entities, in source file src/serial2parallel.v
 Info (12021): Found 0 design units, including 0 entities, in source file src/bcd2sseg_active_low.v
 Info (12021): Found 0 design units, including 0 entities, in source file src/bcd_shift_register.v
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Info (12128): Elaborating entity "uart" for hierarchy "uart:uart_inst" File: C:/hellowhandsome/uart-banner/src/top.v Line: 39
+Info (12128): Elaborating entity "clk_div_26bit" for hierarchy "clk_div_26bit:divider" File: C:/hellowhandsome/uart-banner/src/top.v Line: 36
+Warning (10230): Verilog HDL assignment warning at clk_div_26bit.v(22): truncated value with size 32 to match size of target (26) File: C:/hellowhandsome/uart-banner/src/clk_div_26bit.v Line: 22
+Info (12128): Elaborating entity "uart" for hierarchy "uart:uart_inst" File: C:/hellowhandsome/uart-banner/src/top.v Line: 48
 Info (12128): Elaborating entity "rx_specific_counter" for hierarchy "uart:uart_inst|rx_specific_counter:counter" File: C:/hellowhandsome/uart-banner/src/uart/uart.v Line: 41
 Warning (10230): Verilog HDL assignment warning at m_counter.v(25): truncated value with size 32 to match size of target (16) File: C:/hellowhandsome/uart-banner/src/uart/m_counter.v Line: 25
 Info (12128): Elaborating entity "fifo" for hierarchy "uart:uart_inst|fifo:tx_fifo" File: C:/hellowhandsome/uart-banner/src/uart/uart.v Line: 52
@@ -681,48 +695,48 @@ Warning (10230): Verilog HDL assignment warning at uart_tx.v(53): truncated valu
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(65): truncated value with size 32 to match size of target (4) File: C:/hellowhandsome/uart-banner/src/uart/uart_tx.v Line: 65
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(69): truncated value with size 32 to match size of target (5) File: C:/hellowhandsome/uart-banner/src/uart/uart_tx.v Line: 69
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(80): truncated value with size 32 to match size of target (5) File: C:/hellowhandsome/uart-banner/src/uart/uart_tx.v Line: 80
-Info (12128): Elaborating entity "signal_decoder" for hierarchy "signal_decoder:dcode" File: C:/hellowhandsome/uart-banner/src/top.v Line: 50
+Info (12128): Elaborating entity "signal_decoder" for hierarchy "signal_decoder:dcode" File: C:/hellowhandsome/uart-banner/src/top.v Line: 59
 Warning (10270): Verilog HDL Case Statement warning at signal_decoder.v(17): incomplete case statement has no default case item File: C:/hellowhandsome/uart-banner/src/signal_decoder.v Line: 17
-Info (12128): Elaborating entity "serial2parallel" for hierarchy "serial2parallel:s2p" File: C:/hellowhandsome/uart-banner/src/top.v Line: 61
-Warning (10230): Verilog HDL assignment warning at serial2parallel.v(26): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/serial2parallel.v Line: 26
-Warning (10230): Verilog HDL assignment warning at serial2parallel.v(33): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/serial2parallel.v Line: 33
-Warning (10230): Verilog HDL assignment warning at serial2parallel.v(41): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/serial2parallel.v Line: 41
-Warning (10230): Verilog HDL assignment warning at serial2parallel.v(44): truncated value with size 32 to match size of target (6) File: C:/hellowhandsome/uart-banner/serial2parallel.v Line: 44
-Info (12128): Elaborating entity "bcd_shift_register" for hierarchy "bcd_shift_register:sr" File: C:/hellowhandsome/uart-banner/src/top.v Line: 73
-Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(27): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 27
-Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(28): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 28
-Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(32): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 32
-Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(33): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 33
-Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(36): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 36
-Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(40): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 40
-Info (12128): Elaborating entity "bcd2sseg_active_low" for hierarchy "bcd2sseg_active_low:b2ssg" File: C:/hellowhandsome/uart-banner/src/top.v Line: 88
+Info (12128): Elaborating entity "serial2parallel" for hierarchy "serial2parallel:s2p" File: C:/hellowhandsome/uart-banner/src/top.v Line: 70
+Warning (10230): Verilog HDL assignment warning at serial2parallel.v(26): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/serial2parallel.v Line: 26
+Warning (10230): Verilog HDL assignment warning at serial2parallel.v(33): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/serial2parallel.v Line: 33
+Warning (10230): Verilog HDL assignment warning at serial2parallel.v(42): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/serial2parallel.v Line: 42
+Warning (10230): Verilog HDL assignment warning at serial2parallel.v(48): truncated value with size 32 to match size of target (7) File: C:/hellowhandsome/uart-banner/src/serial2parallel.v Line: 48
+Info (12128): Elaborating entity "bcd_shift_register" for hierarchy "bcd_shift_register:sr" File: C:/hellowhandsome/uart-banner/src/top.v Line: 83
+Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(29): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 29
+Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(30): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 30
+Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(34): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 34
+Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(35): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 35
+Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(38): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 38
+Warning (10230): Verilog HDL assignment warning at bcd_shift_register.v(45): truncated value with size 32 to match size of target (1) File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 45
+Info (12128): Elaborating entity "bcd2sseg_active_low" for hierarchy "bcd2sseg_active_low:b2ssg" File: C:/hellowhandsome/uart-banner/src/top.v Line: 98
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "uart:uart_inst|fifo:rx_fifo|mem" is uninferred due to inappropriate RAM size File: C:/hellowhandsome/uart-banner/src/uart/fifo.v Line: 24
 Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 20
+Info (13000): Registers with preset signals will power-up high File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 22
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sseg5[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 7
-    Warning (13410): Pin "sseg4[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 8
-    Warning (13410): Pin "sseg3[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 9
-    Warning (13410): Pin "sseg2[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 10
-    Warning (13410): Pin "sseg1[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 11
-    Warning (13410): Pin "sseg0[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 12
-    Warning (13410): Pin "tx" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 15
+    Warning (13410): Pin "sseg5[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 8
+    Warning (13410): Pin "sseg4[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 9
+    Warning (13410): Pin "sseg3[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 10
+    Warning (13410): Pin "sseg2[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 11
+    Warning (13410): Pin "sseg1[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 12
+    Warning (13410): Pin "sseg0[7]" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 13
+    Warning (13410): Pin "tx" is stuck at VCC File: C:/hellowhandsome/uart-banner/src/top.v Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file C:/hellowhandsome/uart-banner/output_files/uart-banner.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 699 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 746 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 51 output pins
-    Info (21061): Implemented 645 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 41 warnings
-    Info: Peak virtual memory: 4821 megabytes
-    Info: Processing ended: Tue Apr 22 21:29:21 2025
-    Info: Elapsed time: 00:00:58
-    Info: Total CPU time (on all processors): 00:01:14
+    Info (21059): Implemented 52 output pins
+    Info (21061): Implemented 691 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 4820 megabytes
+    Info: Processing ended: Fri Apr 25 00:33:51 2025
+    Info: Elapsed time: 00:01:03
+    Info: Total CPU time (on all processors): 00:01:20
 
 
 +------------------------------------------+

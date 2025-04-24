@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Tue Apr 22 21:29:21 2025
+Analysis & Synthesis Status : Successful - Fri Apr 25 00:33:51 2025
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : uart-banner
 Top-level Entity Name : top
 Family : MAX 10
-Total logic elements : 605
-    Total combinational functions : 490
-    Dedicated logic registers : 391
-Total registers : 391
-Total pins : 54
+Total logic elements : 650
+    Total combinational functions : 535
+    Dedicated logic registers : 419
+Total registers : 419
+Total pins : 55
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

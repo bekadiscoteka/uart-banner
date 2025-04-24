@@ -2,6 +2,7 @@ Info (10281): Verilog HDL Declaration information at division.v(9): object "read
 Info (10281): Verilog HDL Declaration information at uart_tx.v(10): object "start" differs only in case from object "START" in the same scope File: C:/hellowhandsome/uart-banner/src/uart/uart_tx.v Line: 10
 Info (10281): Verilog HDL Declaration information at fifo.v(10): object "empty" differs only in case from object "EMPTY" in the same scope File: C:/hellowhandsome/uart-banner/src/uart/fifo.v Line: 10
 Info (10281): Verilog HDL Declaration information at fifo.v(10): object "full" differs only in case from object "FULL" in the same scope File: C:/hellowhandsome/uart-banner/src/uart/fifo.v Line: 10
-Info (10281): Verilog HDL Declaration information at serial2parallel.v(12): object "start" differs only in case from object "START" in the same scope File: C:/hellowhandsome/uart-banner/serial2parallel.v Line: 12
+Warning (10268): Verilog HDL information at serial2parallel.v(23): always construct contains both blocking and non-blocking assignments File: C:/hellowhandsome/uart-banner/src/serial2parallel.v Line: 23
+Info (10281): Verilog HDL Declaration information at serial2parallel.v(12): object "start" differs only in case from object "START" in the same scope File: C:/hellowhandsome/uart-banner/src/serial2parallel.v Line: 12
 Info (10281): Verilog HDL Declaration information at bcd_shift_register.v(10): object "start" differs only in case from object "START" in the same scope File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 10
 Info (10281): Verilog HDL Declaration information at bcd_shift_register.v(11): object "pause" differs only in case from object "PAUSE" in the same scope File: C:/hellowhandsome/uart-banner/src/bcd_shift_register.v Line: 11

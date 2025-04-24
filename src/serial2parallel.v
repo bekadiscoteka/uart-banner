@@ -6,6 +6,7 @@
 	)(
 		output reg [(W*N)-1:0] data_out,
 		output reg done_tick,
+		output write_mode,
 		input [W-1:0] data_in, 
 		input clk, reset, 
 			  start,  
@@ -14,8 +15,10 @@
 		localparam	IDLE=0,
 					START=1;
 
-		reg [N-1:0] counter;
+		reg [N:0] counter;
 		reg state;
+
+		assign write_mode = state == START;
 
 		always @(posedge clk, posedge reset) begin
 			if (reset) begin
@@ -32,13 +35,18 @@
 						done_tick <= 0;
 					end
 					START: begin
-						if (new_in_data) begin
-							data_out <= (data_out << W) | data_in;
+						if (new_in_data & !start) begin
 							if (counter == N-1) begin
+								data_out = data_out << W;
+								data_out <= {data_out[(N*W)-1:W], data_in};
 								state <= IDLE;
 								done_tick <= 1;
 							end
-							else counter <= counter + 1;
+							else begin
+								data_out = data_out << W;
+								data_out <= {data_out[(N*W)-1:W], data_in};
+							   	counter <= counter + 1;
+							end
 						end
 					end
 				endcase

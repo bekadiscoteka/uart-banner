@@ -10,7 +10,9 @@
 				start,
 				pause,
 				write,
-				clk, reset
+				clk, reset,
+				divided_clk_tick
+
 	);
 		localparam	START=1,
 					PAUSE=0;
@@ -34,8 +36,11 @@
 				case (state) 
 					START: begin
 						if (pause) state <= PAUSE;
-						data_out <= shift_direction == RIGHT ? 
-				  					data_out >> W : data_out << W;
+						else if (divided_clk_tick) begin
+							data_out <= shift_direction == RIGHT ? 
+								{data_out[W-1:0], data_out[(N*W)-1:W]} : 
+								{data_out[(N*W)-W-1:0], data_out[(N*W)-1:(N*W)-W]};
+						end
 					end
 					PAUSE: if (start) state <= START;
 				endcase
